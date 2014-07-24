@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Date;
+
 @Controller
-@RequestMapping("/")
 public class BaseController {
 
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
@@ -29,5 +30,18 @@ public class BaseController {
 		return "index";
 
 	}
+
+    @RequestMapping(value = "/1", method = RequestMethod.GET)
+    public String print1 (ModelMap model) {
+
+        model.addAttribute("message",
+                "Maven Web Project + Spring 3 MVC - welcome()");
+
+        // Spring uses InternalResourceViewResolver and return back index.jsp
+        return "index1";
+
+    }
+
+
 
 }
