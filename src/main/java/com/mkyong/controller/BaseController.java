@@ -31,14 +31,14 @@ public class BaseController {
 
 	}
 
-    @RequestMapping(value = "/1", method = RequestMethod.GET)
-    public String print1 (ModelMap model) {
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(ModelMap model) {
 
         model.addAttribute("message",
                 "Maven Web Project + Spring 3 MVC - welcome()");
 
         // Spring uses InternalResourceViewResolver and return back index.jsp
-        return "index1";
+        return "index";
 
     }
 
